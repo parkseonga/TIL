@@ -113,7 +113,8 @@ for name in data:
     
     finally:
         driver.close()      
-        
+
+# 추출된 데이터를 데이터프레임 형태로 변환 
 df = pd.DataFrame(alldf)
 product = pd.DataFrame(pro2,columns=['제품명'])    
 material = pd.DataFrame(alldf2,columns=['물질명'])
@@ -121,8 +122,10 @@ material_quantity = pd.DataFrame({'물질량':alldf3})
        
 product['제품명'] = product['제품명'].replace('혼합물질   단일물질','',regex=True)
 product['제품명'] = product['제품명'].replace('\n','|',regex=True)
+
 material['물질명'] = material['물질명'].str.strip()
 material['물질명'] = material['물질명'].replace('\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t','|',regex=True)
+
 material_quantity['물질량'] = material_quantity['물질량'].apply(lambda x: '|'.join(x))
 material_quantity['물질량'] = material_quantity['물질량'].replace('범주','',regex=True)
 material_quantity['물질량'] = material_quantity['물질량'].str.split('|')
