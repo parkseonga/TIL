@@ -2,7 +2,7 @@
 
 * [1. 정의](https://github.com/parkseonga/Machine_learning#1-%EC%A0%95%EC%9D%98)
 * [2. 모델평가]
-* [3. 학습방법]
+* [3. 학습방법](https://github.com/parkseonga/Machine_learning/blob/master/README.md#3-%ED%95%99%EC%8A%B5%EB%B0%A9%EB%B2%95)
 * [4. 학습종류]
 
 
