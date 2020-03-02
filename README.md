@@ -1,9 +1,9 @@
 # Machine_learning
 
 * [1. 정의](https://github.com/parkseonga/Machine_learning#1-%EC%A0%95%EC%9D%98)
-* [2. 모델평가]
+* [2. 모델평가](https://github.com/parkseonga/Machine_learning/blob/master/README.md#3-%ED%95%99%EC%8A%B5%EB%B0%A9%EB%B2%95)
 * [3. 학습방법](https://github.com/parkseonga/Machine_learning/blob/master/README.md#3-%ED%95%99%EC%8A%B5%EB%B0%A9%EB%B2%95)
-* [4. 학습종류]
+* [4. 학습종류](https://github.com/parkseonga/Machine_learning/blob/master/README.md#3-%ED%95%99%EC%8A%B5%EB%B0%A9%EB%B2%95)
 
 
 ## 1. 정의
@@ -95,5 +95,62 @@ viii. AUC
 
 ## 4. Supervised Learing의 종류
 ### 4.1. Decision Tree?
+* decision tree의 구조
+  - internal node: 조건문
+  - edge: 조건 결과에 따른 분기
+  - external node: 결과
+
+* 좋은 트리의 기준?
+  - leaf node에서 통일된 lable의 데이터만 남는 것
+    -> 높은 분류 정확도, 의사결정 정확도
+  - 트리의 깊이가 짧은 것
+    -> 빠른 수행 속도
+  
+* ID3알고리즘(트리 생성 알고리즘)?
+        
+  * 순서: root node -> leaf node
+
+  * 가정1: root node는 모든 데이터를 고려한다.   
+  * 가정2: 하위 노드로 내려가면서 데이터들이 분류된다.
+
+    1. 노드에서 고려할 데이터가 이미 하나의 class에만 속해있거나 더 이상 고려할 feature가 없으면 leaf node로 여기고 자식노드 생성하지 않음.
+    2. 각 노드에서 고려할 feature 선택 시, 데이터를 가장 잘 나눠주는 feature 선택
+      -> information gain이 가장 큰 feature선택
+        - label이 섞여 있으면 나누고 더 이상 나눌 label이 없다면 leaf node (이상적인 경우라면 label이 다소 섞여 있더라도 몇 개 이하면 나누지 않음.)
+    3. 선택된 feature에 대해 조건 별로 자식 노드 생성
+    4. 각 자식 노드에서 해당 조건을 만족하는 데이터만 고려하여 반복
+
+  [참고]
+
+  feature가 categorical feature가 아닌, real-value feature라면? 
+    - bin 생성: 구간을 정해서 하나의 카테고리인 것처럼 만드는 것.
+      * 장점: 계산량이 줄어듦.
+      * 단점: 정보손실량이 커짐 
+        -> 데이터의 성격을 보고 bin생성 방안 
+   
+**즉, root node는 모든 data를 고려하고 information gain이 증가하는 것을 골라서 나눈다.    
+  이때 feature에 대한 조건 별로 자식노드 생성**
+
+* 측정기준
+  - entropy: 클래스 값의 집합 내에서 무작위성(값의 범위 0~1)
+  -> **entropy가 클수록 분류가 제대로 안된 것**
+  - infromation gain: 부모 노드의 entropy - 자식 노드의 entropy 
+   = entropy(parent) - [average entropy(children)]
+  -> **information gain이 클수록 분류가 잘된 것**
+ 
+* 장점
+  - flow chart와 같은 트리 구조가 사람이 읽을 수 있는 형식으로 출력되기 때문에 **모델이 어떻게, 왜 특정 작업에 잘 작동한는지 또는 작동하지 않는지에 대한 통찰력 제공**
+
+* 단점
+  - 명목 특징이 여러 라벨로 이루어져 있거나 다수의 특징을 가지고 있는 경우 트리가 복잡해짐
+    -> train 데이터에서는 좋은 성능을 보이지만 test 데이터에서는 그렇지 않은 overfitting 발생 가능
+
+* 사용 적합 예시
+  - 법적인 이유로 분류 방법이 투명해야하는 애플리케이션
+  - 향후 업무를 알리기 위해 다른 사람과 결과를 공유해야하는 경우
+
+  ex) 1. 신청자 거절 기준이 명확히 문서화되고 편향되지 않은 신용 평가 모델   
+      2. 경영진 또는 광고 대행사와 공유될 고객 만족이나 고객 이탈과 같은 고객 행동 마케팅 연구   
+      3. 실험실 측정, 증상, 질병 진행률을 기반으로 하는 질병 진단   
 
 
