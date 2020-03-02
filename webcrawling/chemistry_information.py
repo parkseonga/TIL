@@ -37,6 +37,7 @@ col_=['업체명',
 
 url_ = 'https://icis.me.go.kr/main.do'
 
+# 빈 리스트 생성
 alldf = []
 alldf2 = []
 alldf3 = []
@@ -66,7 +67,6 @@ for name in data:
                 
         button.click()
         
-                
         elem = driver.find_element_by_id("search3")
         elem.send_keys(name)
         
