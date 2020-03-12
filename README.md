@@ -165,19 +165,24 @@ viii. AUC
 ### 4.2. bayesian networks?
 
 ### 4.3. Linear Classification, Regression?
+### 4.4. SVM?
+### 4.5. PCA?
 
-### 8.1. Ensemble Learning?
-#### 정의
+### 4.6. K-NN?
+### 4.7. K-means?
+
+### 4.8. Ensemble Learning?
+#### 4.8.1. 정의
 - 약한 학습기 여러 개를 결합하여 강한 학습기를 만들어내어 더 좋은 성능을 나타내는 머신러닝 기법
 
-#### 장점
+#### 4.8.2. 장점
 - 여러 학습 모델을 사용하기 때문에 overfitting 될 가능성이 줄어듦.
 - 대용량 데이터나 매우 적은 데이터에서도 모두 잘 작용함.
 - 데이터를 분할하여 학습하기 때문에 미세한 패턴을 좀 더 정확하게 포착할 수 있음   
 
 **높은 variance로 인한 overfitting, 높은 bias로 인한 underfitting을 개선할 수 있음!!**
 
-#### 종류
+#### 4.8.3. 종류
 voting
   - 다른 알고리즘 모델의 조합에 대한 다수결 투표 방식으로 class 결정
   - (hard voting)예측한 결과값을 다수결로 결과 측정    
@@ -192,7 +197,8 @@ bagging(bootstrap aggregating)
 
 boosting
   - 틀린 문제에 가중치를 주어 최적의 학습 모델 도출 -> 정확도는 높지만 outlier에 민감   
-  - 학습이 끝난 후 나온 결과에 따라 가중치가 재분배되는 순차적 학습
+  - 학습이 끝난 후 나온 결과에 따라 가중치가 재분배되는 순차적 학습    
+    ex) Adaboost, Xgboost, Gradient boost
 
 stacking
   - 하나의 데이터에 다른 여러 모델을 학습하여 새로운 모델을 만드는 방법
@@ -200,3 +206,8 @@ stacking
      
   
   참고) https://lsjsj92.tistory.com/558
+  
+  
+### 4.9. perceptron?
+### 4.10. 인공신경망?
+
