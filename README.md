@@ -95,6 +95,7 @@ viii. AUC
 
 ## 4. Supervised Learing의 종류
 ### 4.1. Decision Tree?
+  - 
 #### 4.1.1. decision tree의 구조
   - internal node: 조건문
   - edge: 조건 결과에 따른 분기
@@ -129,7 +130,7 @@ viii. AUC
     4. 각 자식 노드에서 해당 조건을 만족하는 데이터만 고려하여 반복
 
   * [참고]
-
+    - 가지를 너무 많이치면 overfitting이 일어날 수 있음.
     -feature가 categorical feature가 아닌, real-value feature라면? 
       - bin 생성: 구간을 정해서 하나의 카테고리인 것처럼 만드는 것.
         * 장점: 계산량이 줄어듦.
@@ -149,7 +150,7 @@ viii. AUC
   - 명목 특징이 여러 라벨로 이루어져 있거나 다수의 특징을 가지고 있는 경우 트리가 복잡해짐
     -> train 데이터에서는 좋은 성능을 보이지만 test 데이터에서는 그렇지 않은 overfitting 발생 가능
   - 다른 방법에 비해 예측 정확도가 낮은 편
-  - 모델의 분산이 크다    
+  - 모델의 분산이 크다(입력데이터에 영향을 많이 받음)    
       ~~이를 개선한 방법이 randomforest~~
 
 #### 4.1.6. 사용 적합 예시
@@ -169,21 +170,33 @@ viii. AUC
 #### 정의
 - 약한 학습기 여러 개를 결합하여 강한 학습기를 만들어내어 더 좋은 성능을 나타내는 머신러닝 기법
 
+#### 장점
+- 여러 학습 모델을 사용하기 때문에 overfitting 될 가능성이 줄어듦.
+- 대용량 데이터나 매우 적은 데이터에서도 모두 잘 작용함.
+- 데이터를 분할하여 학습하기 때문에 미세한 패턴을 좀 더 정확하게 포착할 수 있음   
+
+**높은 variance로 인한 overfitting, 높은 bias로 인한 underfitting을 개선할 수 있음!!**
+
 #### 종류
 voting
-- 다른 알고리즘 모델의 조합에 대한 다수결 투표 방식으로 class 결정
-- (hard voting)예측한 결과값을 다수결로 결과 측정    
-  ex) 어떤 class를 svm은 1, decesiontree는 2, naviebayes는 1로 예측했을 때 voting result결과는 1 
-- (soft voting)해당 class별로 맞출 확률을 평균내어 가장 높은 값 선택
+  - 다른 알고리즘 모델의 조합에 대한 다수결 투표 방식으로 class 결정
+  - (hard voting)예측한 결과값을 다수결로 결과 측정    
+    ex) 어떤 class를 svm은 1, decesiontree는 2, naviebayes는 1로 예측했을 때 voting result결과는 1 
+  - (soft voting)해당 class별로 맞출 확률을 평균내어 가장 높은 값 선택
+
+bagging(bootstrap aggregating)
+  - 하나의 데이터셋으로 여래 개의 trainset을 나누어 만든다(**복원 추출**)
+  - 분류를 위한 투표 or 수치 예측을 위한 평균화를 이용하여 예측
+  - 병렬 학습   
+    ex) randomforest
+
+boosting
+  - 틀린 문제에 가중치를 주어 최적의 학습 모델 도출 -> 정확도는 높지만 outlier에 민감   
+  - 학습이 끝난 후 나온 결과에 따라 가중치가 재분배되는 순차적 학습
 
 stacking
-- 하나의 데이터에 다른 여러 모델을 학습하여 새로운 모델을 만드는 방법
-
-
-bootstrap
-- 하나의 데이터셋으로 여래 개의 trainset을 나누어 만든다
-  bagging
-  - 
-
-
-
+  - 하나의 데이터에 다른 여러 모델을 학습하여 새로운 모델을 만드는 방법
+  - 각 모델이 예측한 데이터를 다시 train data로 사용하여 예측   
+     
+  
+  참고) https://lsjsj92.tistory.com/558
