@@ -95,7 +95,7 @@ viii. AUC
 
 ## 4. Supervised Learing의 종류
 ### 4.1. Decision Tree?
-  - 
+  - 분류 또는 회귀를 위한 트리 기반 모델
 #### 4.1.1. decision tree의 구조
   - internal node: 조건문
   - edge: 조건 결과에 따른 분기
