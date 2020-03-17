@@ -39,6 +39,8 @@
 - 혼동 행렬로부터 계산할 수 있는 계산 메트릭 종류
 i. Accuracy(정확도)
 - 전체 예측 건수에서 정답을 맞힌 건수의 비율
+**모델을 평가할 때, test data에 class가 불균형하다면 정확도만 보면 안됨!**
+
 ii. Recall(재현율)
 - 실제로 정답이 True인 것들 중에서 분류기가 True로 예측한 비율
 ( 애초에 True가 발생하는 확률이 적을 때 사용하는 것이 좋음)
@@ -72,7 +74,9 @@ viii. AUC
 - 정답이 존재하는 데이터를 이용하여 "분류"하는 작업에서 새로운 데이터의 값 예측
 - 예측하는 값이 이산값이면 분류, 연속값이면 회귀
 
-  ex) Decision Trees, Suppor Vector Machine, Neural networks, Regression 
+  ex) Decision Trees, Suppor Vector Machine, Neural networks, Regression    
+  cf) Regression: 물고기의 종을 보고 몸의 길이를 맞춤(연속적인 값을 예측)
+      Classfication: 몸 길이를 보고 물고기 종을 맞춤(명목형 변수 값을 예측)
 
 ### 3.2. unsupervised leaning
 - 정답이 존재하지 않는 데이터의 패턴을 이용하여 "군집화"하는 작업에서 새로운 데이터의 값 예측
@@ -163,6 +167,46 @@ viii. AUC
       3. 실험실 측정, 증상, 질병 진행률을 기반으로 하는 질병 진단   
 
 ### 4.2. bayesian networks?
+#### 4.2.1. bayesian 기반 분류
+- train data에 특정 값이 제공하는 증거를 기반으로 결과가 관측될 확률 계산하는 graphical model
+- 결과에 대한 확률을 추정하는 동시에 feature를 고려해야만 하는 경우 적합
+- 대부분의 머신러닝 알고리즘은 영향력이 약한 feature는 무시하는 경향이 있지만, 베이지안 기법은 모든 증거를 활용    
+(특징이 아주 많아서 상대적으로 영향력이 적을 때 좋음)
+
+#### 4.2.2. Bayes 정리
+##### 수식
+- P(H|e) = P(e|H)P(H)/P(e)  # e가 이미 일어났을 때 H일 확률
+ - P(H|e): Posterior     # 관측된 e로 부터 우리의 가설(H)는 얼마나 가능성이 있는가?  
+ - P(e|H): Likelihood   # 가설(H)이 진실이라는 것을 감안했을 때, e의 가능성
+ - P(H): Prior               # 데이터를 보기 전 가설확률(사전확률)
+ - P(e): Marginal Likelihood      # 어떠한 경우에도 나타나는 관측한 사건(발생하는 빈도의 측정치)
+##### 장점
+- 관측된 데이터 기반으로 조건부 가설을 검정하기 때무에 통계적 추론을 위한 주요하고 유효한 방법
+- 다른 머신러닝 알고리즘에 비해 상대적으로 알고리즘이 간단하지만 많은 문제를 효과적으로 풀 수 있음.
+
+##### 단점
+- train data에서 한쪽 비율이 높으면 test에서도 한쪽의 비율이 높다고 할 수 있음
+#### 4.2.3. Bayes Classifier
+- P(class|x) = P(class)P(x|class)/P(x)
+#### 4.2.4. Naive Bayes Classifier
+- 확률을 정확하게 계산해내는 것보다 어떤 class의 확률값이 큰지를 계산하여 잘 동작하는 것으로 추정하는 알고리즘
+- 모든 feature가 동등하게 중요하고 독립적이라고 가정   
+(이 가정이 대부분의 실제 응용에는 거의 맞지 않지만 이상하게 잘 동작한다고 함-알고리즘이 여러 유형의 조건에 대해 융통성 있음)
+ 
+#### 4.2.4. Gaussian Naive Bayes Classifier
+- P(x|class)는 빈도수에 기반하기 때문에 train data set에 test data와 같은 값을 가지는 데이터가 없다면 0이 나오기 때문에 가우시안 확률분포를 이용해서 해결할 수 있다.
+ - 가우시안 확률 분포: 변수의 entropy를 최대화하는 분포
+- class를 나눈 후 각 class에 대한 mean, variance의 값을 예측
+ - mean, variance를 측정할 때 likelihood를 최대화하는 방법으로 측정
+ - 각 독립변수와 class마다 mean과 variance는 달라질 수 있기 때문
+ - **likelihood를 max하는 이유?**
+  -관측치 x를 얻을 수 있는 최대의 가능성을 만드는 모수를 추정해야하기 때문
+- Gaussian Naive Bayes Classifier는 XOR문제에 적합않음.
+
+#### 4.2.5. Bayesian Networks
+- 직관적이고 가설 그 자체의 모델
+- 각 class에 대한 posterior probabilityㄹ르 계산하여 가장 큰 확률값의 label선택
+
 
 ### 4.3. Linear Classification, Regression?
 ### 4.4. SVM?
