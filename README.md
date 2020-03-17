@@ -130,7 +130,8 @@ viii. AUC
       -> information gain이 가장 큰 feature선택
         - label이 섞여 있으면 나누고 더 이상 나눌 label이 없다면 leaf node   
         (이상적인 경우라면 label이 다소 섞여 있더라도 몇 개 이하면 나누지 않음.)
-    3. 선택된 feature에 대해 조건 별로 자식 노드 생성
+
+3. 선택된 feature에 대해 조건 별로 자식 노드 생성
     4. 각 자식 노드에서 해당 조건을 만족하는 데이터만 고려하여 반복
 
   * [참고]
@@ -186,8 +187,12 @@ viii. AUC
 
 ##### 단점
 - train data에서 한쪽 비율이 높으면 test에서도 한쪽의 비율이 높다고 할 수 있음
+
 #### 4.2.3. Bayes Classifier
 - P(class|x) = P(class)P(x|class)/P(x)
+- feature가 추가되면 가능한 모든 사건 교집합에 대한 확률을 저장해야되기 때문에 메모리 소모가 큼
+ -> Naive Bayes Classifier 활용
+ 
 #### 4.2.4. Naive Bayes Classifier
 - 확률을 정확하게 계산해내는 것보다 어떤 class의 확률값이 큰지를 계산하여 잘 동작하는 것으로 추정하는 알고리즘
 - 모든 feature가 동등하게 중요하고 독립적이라고 가정   
