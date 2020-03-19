@@ -1,0 +1,88 @@
+---
+title: "t-test"
+author: "박성아"
+date: "`r format(Sys.Date())`"
+output:
+  html_document:
+    fig_height: 6
+    fig_width: 10
+    highlight: textmate
+    theme: cosmo
+    toc: yes
+    toc_depth: 3
+    toc_float: yes  # 움직이는 목차 
+  #pdf_document:
+    #fig_height: 6
+    #fig_width: 10
+    #toc: no
+  #word_document:
+    #fig_height: 6
+    #fig_width: 9
+    #toc: no
+---
+## t-test
+- 조건: 등분산성, 정규성이 만족되어야함.
+
+# 독립표본 
+- 서로 다른 두개의 그룹 간 평균의 차이가 유의한지 검정 
+- 조건1: 두 개의 표본이 서로 관계 없는 모집단에서 추출되어야함.
+- 조건2: 표본 간 관계가 없어야함.   
+
+- ex) 자동차 기어 종류에 따라 mpg의 차이가 통계적으로 유의한가?
+```{r setup, include=FALSE}
+data(mtcars)
+str(mtcars)
+
+# 등분산성 확인 
+# mtcars$am=0: 기어가 자동
+# mtcars$am=1: 기어가 수동
+var.test(mtcars[mtcars$am==1,1],mtcars[mtcars$am==0,1])   # F-검정 이용
+boxplot(mtcars[mtcars$am==1,1],mtcars[mtcars$am==0,1])
+```
+p-value > 0.05 때문에 두 집단의 분산이 다르다는 귀무가설을 채택   
+-> 등분산성 만족
+
+```{r}
+# 표본의 수가 30개 이상이면 중심극한정리에 의해 정규성을 만족한다고 가정
+# t-test 적용 
+t.test(mtcars[mtcars$am==1,1],mtcars[mtcars$am==0,1],paried=FALSE,var.equal = TRUE, conf.level = 0.95)
+```
+mpg의 평균은 수동에서 24.39, auto에서 17.14로 평균에 차이가 존재하고 p-value=0.000285<0.05보다 작기 때문에 유의미하다 
+
+# 대응표본(paired sample t-test)
+- 동일한 집단의 전-후 차이 검정 
+- 조건: 실험 전-후 관측치 수가 동일해야함.
+```{r pressure, echo=FALSE}
+a = c(1:23)
+
+set.seed(123)
+before = c(sample(20:40),20,replace=T)
+
+set.seed(45)
+after = c(sample(50:70),20,replace=T)
+
+data = data.frame(a,before,after)
+
+data$diff = data$after-data$before
+head(data)
+
+# 정규성 검정
+# 귀무가설: 모집단은 정규분포를 따른다.
+# 대립가설: 모집단은 정규분포를 따르지 않는다.
+qqnorm(data$diff); qqline(data$diff,col=2)
+shapiro.test(data$diff)
+```
+p-value=0.03428 < 0.05로 정규분포를 따른다는 귀무가설을 기각   
+비모수적 대응표본 검정인 wilcoxon signed-rank test사용 
+- wilcoxon signed-rank test는 순서를 사용하여 자료의 중위수가 0인지 검정
+- cf) 양수인 데이터의 수와 음수인 데이터읫 ㅜ가 같다면 중위수 = 0
+```{r}
+# wilcoxon signed-rank test
+# 귀무가설: 전후 차이가 존재한다.
+# 대립가설: 전후 차이가 존재하지 않는다.
+wilcox.test(data$after,data$before, alternative = c('two.sided'), paired=TRUE, conf.level = 0.95)
+
+# 정규성을 만족한다면
+# t.test(data$after,data$before,paired=True) 사용
+```
+p-value가 0.05보다 작으므로 귀무가설을 기각
