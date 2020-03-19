@@ -38,6 +38,7 @@
 ![image](https://user-images.githubusercontent.com/33725048/76944390-45534880-6944-11ea-8c7a-7620a5a8ed97.png)
 - 표본을 통해 모집단을 추정함으로써 표본과 모집단의 차이를 알 수 있는데 이를 오차라고 함.   
     -> 오차는 분석과정에서 변수를 이용하여 조절할 수 있고 산포의 모양을 팡가할 수 있다.
+    
 ##### 2.1 가설검정 절차
   1. 가설 설정
   2. 유의수준 설정
@@ -46,17 +47,18 @@
 ![image](https://user-images.githubusercontent.com/33725048/76945533-fd352580-6945-11ea-818c-4aec43a59aef.png)
 ![image](https://user-images.githubusercontent.com/33725048/76945558-08885100-6946-11ea-80e6-1a7e430eab17.png)
 
-##### 2.3.1. t-test 
-- **두 집단 간 평균의 차이가 통계적으로 유의한가?**
+##### 2.1.1. t-test [코드](https://github.com/parkseonga/R_study/blob/master/t-test.Rmd) 
+- 두 집단 간 평균의 차이가 통계적으로 유의한가?
 - 집단이 2개만 존재할 때 두 집단의 평균을 비교하여 가설 검증
   cf) Z검정은 모집단의 분산을 알고 있을 때 두 집단 간 평균의 차이가 통계적으로 유의한가를 보는 것으로 모집단의 분산을 아는 경우가 적기 때문에 주로 t-test가 사용됨
+- 조건1: 등분산성이 만족
+- 조건2: 정규분포를 따름 -> 정규분포를 따르지 않는다면 비모수적 검정 방법 사용
 
-
-#### 3. 사후 검정 
+#### 2.2. 사후 검정 
 - ANOVA 분석 후 유의미하다는 결론이 도출된 후 집단 간의 어떠한 차이가 있는 지 알고 싶을 때 사용
 ![image](https://user-images.githubusercontent.com/33725048/76945581-1211b900-6946-11ea-876c-57da580c6397.png)
 
-##### 3.1. scheffe검정( agricolae package )
+##### 2.2.1 scheffe검정( agricolae package ) [코드](https://github.com/parkseonga/R_study/blob/master/scheffe.r)
 - 세 개 이상의 요인 수준 간의 평균들을 비교하거나 표본의 크기가 다를 때 사용하는 사후 검정
 - F-분포에 기반하여 각 집단들의 평균값에 대한 모든 가능한 짝들을 동시에 비교
 - 다중비교 시 표본의 크기가 달라도 검정력이 우수 
