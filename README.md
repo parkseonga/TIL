@@ -1,5 +1,7 @@
 # Machine_learning
 
+순천향대학교 빅데이터공학과 정영섭 교수님 수업을 토대로 공부하고 작성한 내용 
+
 * [1. 정의](https://github.com/parkseonga/Machine_learning#1-%EC%A0%95%EC%9D%98)
 * [2. 모델평가](https://github.com/parkseonga/Machine_learning/blob/master/README.md#3-%ED%95%99%EC%8A%B5%EB%B0%A9%EB%B2%95)
 * [3. 학습방법](https://github.com/parkseonga/Machine_learning/blob/master/README.md#3-%ED%95%99%EC%8A%B5%EB%B0%A9%EB%B2%95)
