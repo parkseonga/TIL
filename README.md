@@ -216,10 +216,15 @@ viii. AUC
 
 
 ### 4.3. Linear Classification, Regression?
-### 4.4. SVM?
+추후추가
+### 4.4. SVM
+추후추가
 ### 4.5. PCA?
+추후추가
 ### 4.6. K-NN?
+추후추가
 ### 4.7. K-means?
+추후추가
 ### 4.8. Ensemble Learning?
 #### 4.8.1. 정의
 - 약한 학습기 여러 개를 결합하여 강한 학습기를 만들어내어 더 좋은 성능을 나타내는 머신러닝 기법
@@ -258,5 +263,6 @@ stacking
   
   
 ### 4.9. perceptron?
+추후추가
 ### 4.10. 인공신경망?
 
