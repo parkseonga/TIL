@@ -91,7 +91,7 @@ viii. AUC
 - 정답이 존재하는 일부 데이터를 통해 패턴을 발견하고 새로운 데이터의 값 예측
 - 이상값 탐지 등에 사용
 
-  ex) OcSVM
+  ex) [OcSVM](https://ssung-22.tistory.com/31)
   
 ### 3.4. Reinforcement learning
 - 환경에 대한 사전지식 없이도 학습할 수 있는 방법으로 행동에 대한 보상을 통해 데이터를 학습하고 새로운 데이터의 값을 예측
@@ -218,7 +218,8 @@ viii. AUC
 ### 4.3. Linear Classification, Regression?
 추후추가
 ### 4.4. SVM
-추후추가
+https://ssung-22.tistory.com/32
+
 ### 4.5. PCA?
 추후추가
 ### 4.6. K-NN?
