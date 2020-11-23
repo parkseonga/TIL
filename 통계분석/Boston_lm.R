@@ -22,13 +22,13 @@ training = data[training_idx,]
 validation = data[validate_idx,]
 test = data[test_idx,]
 
-# Ç¥ÁØÈ­ÇÏ±â Àü¿¡ ´ÜÀ§ÀÇ ¹®Á¦°¡ ¹ß»ıÇÏ±â ¶§¹®¿¡ È¸±Í°è¼ö°ªµéÀ» ºñ±³ÇÏ±â ½±Áö ¾Ê¾Æ¼­ ÀÌ¿¡ ´ëÇØ ºñ±³.
-# Ç¥ÁØÈ­µÈ °ÍÀ» ÀÌ¿ëÇØ¼­ °ËÁõµ¥ÀÌÅÍ³ª testµ¥ÀÌÅÍ¿¡ Àû¿ëÇÏ±â¿¡´Â ¹ø°Å·Î¿öÁø´Ù.
-# ¿µÇâ·ÂÀ» ºñ±³ÇÒ ¶§ È¸±Í°è¼ö°ªµéÀ» ºñ±³ÇÏ¸é µÇ°í ±âÁ¸¿¡ ºñÇ¥ÁØÈ­µÈ ¹æ¹ıµéÀ» °¡Áö°í ¿¹Ãø¿¡ »ç¿ëÇÏ¸é µÈ´Ù.
-# ¿Ö? : Ç¥ÁØÈ­¸¦ ÇÏ°ÔµÇ¸é Ç¥ÁØÈ­ÇØ¼­ ÇĞ½Àµ¥ÀÌÅÍ¿¡ »ç¿ëµÇ¾ú´ø °ªµéÀ» ´Ù½Ã °¡Áö°í ¿Í¼­ test³ª validation¿¡ ´Ù½Ã Àû¿ëÇØ¾ßÇÏ±â ¶§¹®¿¡.
-# ÀüÃ¼ µ¥ÀÌÅÍ·Î Ç¥ÁØÈ­ ½ÃÅ°´Â °Ô ¾Æ´Ô. validation°ú testµ¥ÀÌÅÍ´Â º¸Áö ¸øÇÑ °ªÀ¸·Î °¡Á¤ÇÏ±â ¶§¹®¿¡
-# Ç¥ÁØÈ­¸¦ ÇÏ´Â ÀÌÀ¯´Â º¯¼öµéÀÇ ¿µÇâ·ÂÀ» ÆÄ¾ÇÇÏ±â À§ÇÔ. 
-# ¸ğÇüÀ» ¿¹ÃøÇÏ·Á¸é ±âÁ¸¿¡ »ç¿ëÇß´ø ºñÇ¥ÁØÈ­¸¦ ÀÌ¿ëÇØ¼­ ºĞ¼®À» ÇÏ¸éµÊ. 
+# í‘œì¤€í™”í•˜ê¸° ì „ì— ë‹¨ìœ„ì˜ ë¬¸ì œê°€ ë°œìƒí•˜ê¸° ë•Œë¬¸ì— íšŒê·€ê³„ìˆ˜ê°’ë“¤ì„ ë¹„êµí•˜ê¸° ì‰½ì§€ ì•Šì•„ì„œ ì´ì— ëŒ€í•´ ë¹„êµ.
+# í‘œì¤€í™”ëœ ê²ƒì„ ì´ìš©í•´ì„œ ê²€ì¦ë°ì´í„°ë‚˜ testë°ì´í„°ì— ì ìš©í•˜ê¸°ì—ëŠ” ë²ˆê±°ë¡œì›Œì§„ë‹¤.
+# ì˜í–¥ë ¥ì„ ë¹„êµí•  ë•Œ íšŒê·€ê³„ìˆ˜ê°’ë“¤ì„ ë¹„êµí•˜ë©´ ë˜ê³  ê¸°ì¡´ì— ë¹„í‘œì¤€í™”ëœ ë°©ë²•ë“¤ì„ ê°€ì§€ê³  ì˜ˆì¸¡ì— ì‚¬ìš©í•˜ë©´ ëœë‹¤.
+# ì™œ? : í‘œì¤€í™”ë¥¼ í•˜ê²Œë˜ë©´ í‘œì¤€í™”í•´ì„œ í•™ìŠµë°ì´í„°ì— ì‚¬ìš©ë˜ì—ˆë˜ ê°’ë“¤ì„ ë‹¤ì‹œ ê°€ì§€ê³  ì™€ì„œ testë‚˜ validationì— ë‹¤ì‹œ ì ìš©í•´ì•¼í•˜ê¸° ë•Œë¬¸ì—.
+# ì „ì²´ ë°ì´í„°ë¡œ í‘œì¤€í™” ì‹œí‚¤ëŠ” ê²Œ ì•„ë‹˜. validationê³¼ testë°ì´í„°ëŠ” ë³´ì§€ ëª»í•œ ê°’ìœ¼ë¡œ ê°€ì •í•˜ê¸° ë•Œë¬¸ì—
+# í‘œì¤€í™”ë¥¼ í•˜ëŠ” ì´ìœ ëŠ” ë³€ìˆ˜ë“¤ì˜ ì˜í–¥ë ¥ì„ íŒŒì•…í•˜ê¸° ìœ„í•¨. 
+# ëª¨í˜•ì„ ì˜ˆì¸¡í•˜ë ¤ë©´ ê¸°ì¡´ì— ì‚¬ìš©í–ˆë˜ ë¹„í‘œì¤€í™”ë¥¼ ì´ìš©í•´ì„œ ë¶„ì„ì„ í•˜ë©´ë¨. 
 
 data_lm_before_sc = lm(medv~., data = training)
 summary(data_lm_before_sc)
@@ -39,12 +39,12 @@ summary(data_lm_after_sc)
 
 lm.beta(data_lm_before_sc)
 
-# Ç¥ÁØÈ­ Àü °³Ã¼¸¦ lm.beta¿¡ Àû¿ëÇÏ¿´À» ¶§ °è¼ö°ªµéÀÌ µ¿ÀÏÇÏ°Ô ³ª¿À´Â Áö È®ÀÎ.
-# Á¶½ÉÇØ¾ßÇÑ´Ù¶ó°í »ı°¢ÇÏ½Ã´Â ºĞµéµµ °è½É ´Ü¼øÇÏ°Ô Àı´ë°ªÀÌ Å©¸é ¿µÇâÀ» ¸¹ÀÌ ¹ÌÄ£´Ù¶ó°í »ı°¢ÇØµµ Å©°Ô ¹®Á¦´Â ¾øÀ½. 
-# º¸Åë ÇØ¾ßÇÒ °ÍµéÀº °¢°¢ÀÇ º¯¼öµéÀ» Á¦°ÅÇØ°¡¸é¼­ ¿¹Ãø·Â¿¡ Æ÷Ä¿½º¸¦ µÎ°í ±×¶§±×¶§ »ç¿ë 
-# È¸±Í°è¼ö´Â ÇØ¼®ÇÏ±â À§ÇØ »ç¿ëÇÏ´Â °Í
+# í‘œì¤€í™” ì „ ê°œì²´ë¥¼ lm.betaì— ì ìš©í•˜ì˜€ì„ ë•Œ ê³„ìˆ˜ê°’ë“¤ì´ ë™ì¼í•˜ê²Œ ë‚˜ì˜¤ëŠ” ì§€ í™•ì¸.
+# ì¡°ì‹¬í•´ì•¼í•œë‹¤ë¼ê³  ìƒê°í•˜ì‹œëŠ” ë¶„ë“¤ë„ ê³„ì‹¬ ë‹¨ìˆœí•˜ê²Œ ì ˆëŒ€ê°’ì´ í¬ë©´ ì˜í–¥ì„ ë§ì´ ë¯¸ì¹œë‹¤ë¼ê³  ìƒê°í•´ë„ í¬ê²Œ ë¬¸ì œëŠ” ì—†ìŒ. 
+# ë³´í†µ í•´ì•¼í•  ê²ƒë“¤ì€ ê°ê°ì˜ ë³€ìˆ˜ë“¤ì„ ì œê±°í•´ê°€ë©´ì„œ ì˜ˆì¸¡ë ¥ì— í¬ì»¤ìŠ¤ë¥¼ ë‘ê³  ê·¸ë•Œê·¸ë•Œ ì‚¬ìš© 
+# íšŒê·€ê³„ìˆ˜ëŠ” í•´ì„í•˜ê¸° ìœ„í•´ ì‚¬ìš©í•˜ëŠ” ê²ƒ
 
-# metric Á¤ÀÇ 
+# metric ì •ì˜ 
 rmse = function(yi, yhat_i){
   sqrt(mean((yi-yhat_i)^2))
 }
@@ -53,7 +53,7 @@ y_obs_t = training$medv
 y_obs_v = validation$medv
 
 
-# ¼±ÇüÈ¸±Í¸ğÇü
+# ì„ í˜•íšŒê·€ëª¨í˜•
 lm.fit.train = lm(medv~.,data = training)
 summary(lm.fit.train)
 length(coef(lm.fit.train))
@@ -73,14 +73,14 @@ rmse(training$medv,predict(lm.fit.train, training))
 rmse(validation$medv,predict(lm.fit.train, validation))
 
 
-# ÀÜÂ÷: ¿¹Ãø°ª°ú ½ÇÁ¦ °ªÀÇ Â÷ÀÌ 
+# ì”ì°¨: ì˜ˆì¸¡ê°’ê³¼ ì‹¤ì œ ê°’ì˜ ì°¨ì´ 
 error = as.vector(predict(lm.fit.train, validation)-validation$medv)
 
 par(mfrow = c(1,3))
 
 hist(error)
 
-# µ¥ÀÌÅÍ°¡ Æ¯Á¤ ¸ğÁı´Ü¿¡¼­ ³ª¿Â °ÍÀÌ¶ó °¡Á¤ÇßÀ» ¶§ µ¥ÀÌÅÍ°¡ ¾ó¸¶¸¸Å­ Æ¯Á¤ ¸ğÁı´Ü¿¡ °¡±î¿î°¡¸¦ º¸´Â °ÍÀ¸·Î ¼±ÀÌ °¡Àå ÀÌ»óÀûÀÎ ºĞÆ÷¸¦ ³ªÅ¸³½´Ù.
+# ë°ì´í„°ê°€ íŠ¹ì • ëª¨ì§‘ë‹¨ì—ì„œ ë‚˜ì˜¨ ê²ƒì´ë¼ ê°€ì •í–ˆì„ ë•Œ ë°ì´í„°ê°€ ì–¼ë§ˆë§Œí¼ íŠ¹ì • ëª¨ì§‘ë‹¨ì— ê°€ê¹Œìš´ê°€ë¥¼ ë³´ëŠ” ê²ƒìœ¼ë¡œ ì„ ì´ ê°€ì¥ ì´ìƒì ì¸ ë¶„í¬ë¥¼ ë‚˜íƒ€ë‚¸ë‹¤.
 qqnorm(error); qqline(error, col = 2)
 
 p2 = xyplot(error ~ as.vector(predict(lm.fit.train, validation)),col = 2,type = c("p", "smooth"),xlab = "predicted values", ylab = "Residuals",main = "Residuals vs. predicted" )
@@ -88,7 +88,7 @@ print(p2, position = c(0.66, 0, 0.99, 1),more = TRUE)
 
 
 
-# ÀÌÂ÷Çü ¼±ÇüÈ¸±Í¸ğÇü
+# ì´ì°¨í˜• ì„ í˜•íšŒê·€ëª¨í˜•
 
 lm2.fit.train = lm(medv~ .^2, data = training)
 
@@ -155,7 +155,7 @@ plot(data_tr)
 
 text(data_tr, use.n = TRUE)
 
-# ÇĞ½Àµ¥ÀÌÅÍ ÀûÇÕ
+# í•™ìŠµë°ì´í„° ì í•©
 yhat_tr_t = predict(data_tr, newdata = training)
 rmse(y_obs_t, yhat_tr_t)
 
@@ -168,27 +168,27 @@ qqnorm(error_tr); qqline(error_tr, col = 2)
 p2 = xyplot(error_tr ~ as.vector(predict(data_tr, training)),col = 2,type = c("p", "smooth"),xlab = "fitted values", ylab = "Residuals",main = "Residuals vs. fitted" )
 print(p2, position = c(0.66, 0, 0.99, 1),more = TRUE)
 
-# °ËÁõµ¥ÀÌÅÍ ¿¹Ãø
+# ê²€ì¦ë°ì´í„° ì˜ˆì¸¡
 yhat_tr_v = predict(data_tr, newdata = validation)
 rmse(y_obs_v, yhat_tr_v)
 
-# ÀÜÂ÷: ¿¹Ãø°ª°ú ½ÇÁ¦ °ªÀÇ Â÷ÀÌ 
+# ì”ì°¨: ì˜ˆì¸¡ê°’ê³¼ ì‹¤ì œ ê°’ì˜ ì°¨ì´ 
 error = as.vector(predict(data_tr, newdata = validation))-validation$medv
 par(mfrow = c(1,3))
 
-# µ¥ÀÌÅÍ°¡ Æ¯Á¤ ¸ğÁı´Ü¿¡¼­ ³ª¿Â °ÍÀÌ¶ó °¡Á¤ÇßÀ» ¶§ µ¥ÀÌÅÍ°¡ ¾ó¸¶¸¸Å­ Æ¯Á¤ ¸ğÁı´Ü¿¡ °¡±î¿î°¡¸¦ º¸´Â °ÍÀ¸·Î ¼±ÀÌ °¡Àå ÀÌ»óÀûÀÎ ºĞÆ÷¸¦ ³ªÅ¸³½´Ù.
+# ë°ì´í„°ê°€ íŠ¹ì • ëª¨ì§‘ë‹¨ì—ì„œ ë‚˜ì˜¨ ê²ƒì´ë¼ ê°€ì •í–ˆì„ ë•Œ ë°ì´í„°ê°€ ì–¼ë§ˆë§Œí¼ íŠ¹ì • ëª¨ì§‘ë‹¨ì— ê°€ê¹Œìš´ê°€ë¥¼ ë³´ëŠ” ê²ƒìœ¼ë¡œ ì„ ì´ ê°€ì¥ ì´ìƒì ì¸ ë¶„í¬ë¥¼ ë‚˜íƒ€ë‚¸ë‹¤.
 hist(error)
 qqnorm(error); qqline(error, col = 2)
 
 p2 = xyplot(error ~ as.vector(predict(data_tr, validation)),col = 2,type = c("p", "smooth"),xlab = "predicted values", ylab = "Residuals",main = "Residuals vs. predicted" )
 print(p2, position = c(0.66, 0, 0.99, 1),more = TRUE)
 
-# µ¥ÀÌÅÍ°¡ Æ¯Á¤ ¸ğÁı´Ü¿¡¼­ ³ª¿Â °ÍÀÌ¶ó °¡Á¤ÇßÀ» ¶§ µ¥ÀÌÅÍ°¡ ¾ó¸¶¸¸Å­ Æ¯Á¤ ¸ğÁı´Ü¿¡ °¡±î¿î°¡¸¦ º¸´Â °ÍÀ¸·Î ¼±ÀÌ °¡Àå ÀÌ»óÀûÀÎ ºĞÆ÷¸¦ ³ªÅ¸³½´Ù.
+# ë°ì´í„°ê°€ íŠ¹ì • ëª¨ì§‘ë‹¨ì—ì„œ ë‚˜ì˜¨ ê²ƒì´ë¼ ê°€ì •í–ˆì„ ë•Œ ë°ì´í„°ê°€ ì–¼ë§ˆë§Œí¼ íŠ¹ì • ëª¨ì§‘ë‹¨ì— ê°€ê¹Œìš´ê°€ë¥¼ ë³´ëŠ” ê²ƒìœ¼ë¡œ ì„ ì´ ê°€ì¥ ì´ìƒì ì¸ ë¶„í¬ë¥¼ ë‚˜íƒ€ë‚¸ë‹¤.
 
 qqnorm(error)
 qqline(error)
 
-# bagging ¹æ¹ı
+# bagging ë°©ë²•
 # randomforest
 library(randomForest)
 
@@ -197,10 +197,10 @@ set.seed(1607)
 data_rf = randomForest(medv~., training)
 data_rf 
 
-# »ó°ü°è¼ö¶û ºñ±³ÇØ¼­ ¾î¶² °ÍÀÌ ¿µÇâ·ÂÀÌ Å«Áö
+# ìƒê´€ê³„ìˆ˜ë‘ ë¹„êµí•´ì„œ ì–´ë–¤ ê²ƒì´ ì˜í–¥ë ¥ì´ í°ì§€
 varImpPlot(data_rf)
 pairs.panels(data[,-4])
-# ÇĞ½Àµ¥ÀÌÅÍ ÀûÇÕ
+# í•™ìŠµë°ì´í„° ì í•©
 yhat_tr_t = predict(data_rf, newdata = training)
 rmse(y_obs_t, yhat_tr_t)
 
@@ -213,7 +213,7 @@ qqnorm(error_tr); qqline(error_tr, col = 2)
 p2 = xyplot(error_tr ~ as.vector(predict(data_rf, training)),col = 2,type = c("p", "smooth"),xlab = "fitted values", ylab = "Residuals",main = "Residuals vs. fitted" )
 print(p2, position = c(0.66, 0, 0.99, 1),more = TRUE)
 
-# °ËÁõµ¥ÀÌÅÍ ¿¹Ãø
+# ê²€ì¦ë°ì´í„° ì˜ˆì¸¡
 yhat_tr_v = predict(data_rf, newdata = validation)
 rmse(y_obs_v, yhat_tr_v)
 
@@ -225,7 +225,7 @@ yhat_tr_test = predict(data_tr, newdata = test)
 rmse(test$medv, yhat_tr_test)
 
 
-# ÀÜÂ÷: ¿¹Ãø°ª°ú ½ÇÁ¦ °ªÀÇ Â÷ÀÌ 
+# ì”ì°¨: ì˜ˆì¸¡ê°’ê³¼ ì‹¤ì œ ê°’ì˜ ì°¨ì´ 
 error = as.vector(predict(data_rf, newdata = validation))-validation$medv
 par(mfrow = c(1,3))
 
@@ -236,9 +236,9 @@ qqnorm(error); qqline(error, col = 2)
 p2 = xyplot(error ~ as.vector(predict(data_rf, validation)),col = 2,type = c("p", "smooth"),xlab = "predicted values", ylab = "Residuals",main = "Residuals vs. predicted" )
 print(p2, position = c(0.66, 0, 0.99, 1),more = TRUE)
 
-# ÇĞ½Àµ¥ÀÌÅÍ¿Í °ËÁõ µ¥ÀÌÅÍ¿¡ ´ëÇÑ ÀûÇÕ ¹× ¿¹Ãø ÈÄ °ËÁõ
+# í•™ìŠµë°ì´í„°ì™€ ê²€ì¦ ë°ì´í„°ì— ëŒ€í•œ ì í•© ë° ì˜ˆì¸¡ í›„ ê²€ì¦
 
-# boosting ¹æ¹ı 
+# boosting ë°©ë²• 
 # boosting
 
 library(gbm)
@@ -247,7 +247,7 @@ set.seed(1607)
 data_gbm = gbm(medv~., data = training, n.trees = 4000, cv.folds = 3, verbose = TRUE)
 best_itr = gbm.perf(data_gbm, method = "cv")
 
-# ÇĞ½Àµ¥ÀÌÅÍ ÀûÇÕ
+# í•™ìŠµë°ì´í„° ì í•©
 yhat_tr_t = predict(data_gbm, newdata = training)
 rmse(y_obs_t, yhat_tr_t)
 
@@ -260,11 +260,11 @@ qqnorm(error_tr); qqline(error_tr, col = 2)
 p2 = xyplot(error_tr ~ as.vector(predict(data_gbm, training)),col = 2,type = c("p", "smooth"),xlab = "fitted values", ylab = "Residuals",main = "Residuals vs. fitted" )
 print(p2, position = c(0.66, 0, 0.99, 1),more = TRUE)
 
-# °ËÁõµ¥ÀÌÅÍ ¿¹Ãø
+# ê²€ì¦ë°ì´í„° ì˜ˆì¸¡
 yhat_tr_v = predict(data_gbm, newdata = validation)
 rmse(y_obs_v, yhat_tr_v)
 
-# ÀÜÂ÷: ¿¹Ãø°ª°ú ½ÇÁ¦ °ªÀÇ Â÷ÀÌ 
+# ì”ì°¨: ì˜ˆì¸¡ê°’ê³¼ ì‹¤ì œ ê°’ì˜ ì°¨ì´ 
 error = as.vector(predict(data_gbm, newdata = validation))-validation$medv
 par(mfrow = c(1,3))
 
@@ -286,7 +286,7 @@ pca_boston
 summary(pca_boston)
 
 
-# Data set ±¸Ãà (ÁÖ¼ººĞ Á¡¼ö ¸¸µé±â)
+# Data set êµ¬ì¶• (ì£¼ì„±ë¶„ ì ìˆ˜ ë§Œë“¤ê¸°)
 data_pca_t <- data.frame(predict(pca_boston, training[,-14]))
 data_pca_v <- data.frame(predict(pca_boston, validation[,-14]))
 data_pca_e <- data.frame(predict(pca_boston, test[, -14]))
@@ -315,22 +315,22 @@ qqnorm(error_tr); qqline(error_tr, col = 2)
 p2 = xyplot(error_tr ~ as.vector(predict(pca_boston, training)),col = 2,type = c("p", "smooth"),xlab = "fitted values", ylab = "Residuals",main = "Residuals vs. fitted" )
 print(p2, position = c(0.66, 0, 0.99, 1),more = TRUE)
 
-# °ËÁõµ¥ÀÌÅÍ ¿¹Ãø
+# ê²€ì¦ë°ì´í„° ì˜ˆì¸¡
 yhat_tr_v = predict(pca_boston, newdata = validation)
 rmse(y_obs_v, yhat_tr_v)
 
-# ÀÜÂ÷: ¿¹Ãø°ª°ú ½ÇÁ¦ °ªÀÇ Â÷ÀÌ 
+# ì”ì°¨: ì˜ˆì¸¡ê°’ê³¼ ì‹¤ì œ ê°’ì˜ ì°¨ì´ 
 error = as.vector(predict(pca_boston, newdata = validation))-validation$medv
 par(mfrow = c(1,3))
 
-# µ¥ÀÌÅÍ°¡ Æ¯Á¤ ¸ğÁı´Ü¿¡¼­ ³ª¿Â °ÍÀÌ¶ó °¡Á¤ÇßÀ» ¶§ µ¥ÀÌÅÍ°¡ ¾ó¸¶¸¸Å­ Æ¯Á¤ ¸ğÁı´Ü¿¡ °¡±î¿î°¡¸¦ º¸´Â °ÍÀ¸·Î ¼±ÀÌ °¡Àå ÀÌ»óÀûÀÎ ºĞÆ÷¸¦ ³ªÅ¸³½´Ù.
+# ë°ì´í„°ê°€ íŠ¹ì • ëª¨ì§‘ë‹¨ì—ì„œ ë‚˜ì˜¨ ê²ƒì´ë¼ ê°€ì •í–ˆì„ ë•Œ ë°ì´í„°ê°€ ì–¼ë§ˆë§Œí¼ íŠ¹ì • ëª¨ì§‘ë‹¨ì— ê°€ê¹Œìš´ê°€ë¥¼ ë³´ëŠ” ê²ƒìœ¼ë¡œ ì„ ì´ ê°€ì¥ ì´ìƒì ì¸ ë¶„í¬ë¥¼ ë‚˜íƒ€ë‚¸ë‹¤.
 hist(error)
 qqnorm(error); qqline(error, col = 2)
 
 p2 = xyplot(error ~ as.vector(predict(pca_boston, validation)),col = 2,type = c("p", "smooth"),xlab = "predicted values", ylab = "Residuals",main = "Residuals vs. predicted" )
 print(p2, position = c(0.66, 0, 0.99, 1),more = TRUE)
 
-# µ¥ÀÌÅÍ°¡ Æ¯Á¤ ¸ğÁı´Ü¿¡¼­ ³ª¿Â °ÍÀÌ¶ó °¡Á¤ÇßÀ» ¶§ µ¥ÀÌÅÍ°¡ ¾ó¸¶¸¸Å­ Æ¯Á¤ ¸ğÁı´Ü¿¡ °¡±î¿î°¡¸¦ º¸´Â °ÍÀ¸·Î ¼±ÀÌ °¡Àå ÀÌ»óÀûÀÎ ºĞÆ÷¸¦ ³ªÅ¸³½´Ù.
+# ë°ì´í„°ê°€ íŠ¹ì • ëª¨ì§‘ë‹¨ì—ì„œ ë‚˜ì˜¨ ê²ƒì´ë¼ ê°€ì •í–ˆì„ ë•Œ ë°ì´í„°ê°€ ì–¼ë§ˆë§Œí¼ íŠ¹ì • ëª¨ì§‘ë‹¨ì— ê°€ê¹Œìš´ê°€ë¥¼ ë³´ëŠ” ê²ƒìœ¼ë¡œ ì„ ì´ ê°€ì¥ ì´ìƒì ì¸ ë¶„í¬ë¥¼ ë‚˜íƒ€ë‚¸ë‹¤.
 
 qqnorm(error)
 qqline(error)
