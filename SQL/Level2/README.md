@@ -29,7 +29,7 @@
   ORDER BY NAME;
   </code></pre>
   
-* 입양 시각 구하기(1) (GROUP BY)
+* [입양 시각 구하기(1) (GROUP BY)](https://programmers.co.kr/learn/courses/30/lessons/59412)
   <pre><code>SELECT HOUR(DATETIME) AS HOUR, COUNT(HOUR(DATETIME)) AS COUNT
   FROM ANIMAL_OUTS
   WHERE HOUR(DATETIME) >= 9 AND HOUR(DATETIME) < 20
