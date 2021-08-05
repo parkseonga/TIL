@@ -30,10 +30,10 @@
   </code></pre>
   
 * [입양 시각 구하기(1) (GROUP BY)](https://programmers.co.kr/learn/courses/30/lessons/59412)
-  <pre><code>SELECT HOUR(DATETIME) AS HOUR, COUNT(HOUR(DATETIME)) AS COUNT
-  FROM ANIMAL_OUTS
-  WHERE HOUR(DATETIME) >= 9 AND HOUR(DATETIME) < 20
-  GROUP BY HOUR(DATETIME)
+    <pre><code>SELECT HOUR(DATETIME) AS HOUR, COUNT(HOUR(DATETIME)) AS COUNT
+    FROM ANIMAL_OUTS
+    WHERE HOUR(DATETIME) >= 9 AND HOUR(DATETIME) < 20
+    GROUP BY HOUR(DATETIME)
   ORDER BY HOUR(DATETIME);
   </code></pre> 
 
@@ -67,7 +67,6 @@
   ORDER BY ANIMAL_ID;
   </code></pre> 
   
-*  [NULL 처리하기 (IS NULL)](https://programmers.co.kr/learn/courses/30/lessons/59410)
-  <pre><code>SELECT ANIMAL_TYPE, IFNULL(NAME, "No name"), SEX_UPON_INTAKE
-  FROM ANIMAL_INS;
-  </code></pre> 
+* [NULL 처리하기 (IS NULL)](https://programmers.co.kr/learn/courses/30/lessons/59410)
+  <pre><code> SELECT ANIMAL_TYPE, IFNULL(NAME, "No name"), SEX_UPON_INTAKE
+  FROM ANIMAL_INS;</code></pre> 
